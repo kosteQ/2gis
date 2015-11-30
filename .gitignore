@@ -1,0 +1,16 @@
+*.DS_Store
+/node_modules/*
+/bower_components/*
+/psd/*
+*.idea
+/.sass-cache
+/tmp/*
+/www/admin/constr.php
+/www/files/*
+/www/bitrix/*
+/www/upload/*
+/www/sitemap.xml*
+/www/sitemap_*
+/www/web.config
+/www/wp-content
+/www/robots.txt

@@ -1,0 +1,275 @@
+// Настройки проетка
+//
+//
+// Глобальные
+// -------------------------------------
+
+// Шрифты
+// Импорт шрифтов происходит в файле _fonts.scss
+// $opensans              : 'opensans', sans-serif;
+// $opensans-bold         : 'opensans-bold', sans-serif;
+// $opensans-italic       : 'opensans-italic', sans-serif;
+
+$ruble                 : 'ruble', sans-serif;
+
+// $circe-light           : 'circe-light', 'opensans', sans-serif;
+// $circe-regular         : 'circe-light', 'opensans', sans-serif;
+// $circe-bold            : 'circe-bold', 'opensans', sans-serif;
+
+// $PTSans-regular        : 'PTSans-regular', 'opensans', sans-serif;
+// $PTSans-bold           : 'PTSans-bold', 'opensans', sans-serif;
+// $PTSans-italic         : 'PTSans-italic', 'opensans', sans-serif;
+
+// $pragmatica-extra-light-regular : 'PragmaticaExtraLight-Reg', sans-serif;
+// $pragmatica-extra-light-oblique : 'PragmaticaExtraLight-Oblique', sans-serif;
+// $pragmatica-extra-bold          : 'PragmaticaExtraBold', sans-serif;
+// $pragmatica-extra-bold-oblique  : 'PragmaticaExtraBold-Oblique', sans-serif;
+// $pragmatica-light               : 'PragmaticaLight', sans-serif;
+// $pragmatica-light-oblique       : 'PragmaticaLight-Oblique', sans-serif;
+// $pragmatica-bold-regular        : 'PragmaticaBold-Reg', sans-serif;
+// $pragmatica-bold-oblique        : 'PragmaticaBold-Obl', sans-serif;
+// $pragmatica-medium              : 'PragmaticaMedium', sans-serif;
+// $pragmatica-medium-oblique      : 'PragmaticaMedium-Oblique', sans-serif;
+// $pragmatica-book-regular        : 'PragmaticaBook-Reg', sans-serif;
+// $pragmatica-book-italic         : 'PragmaticaBook-Italic', sans-serif;
+// $pragmatica-black               : 'PragmaticaBlack', sans-serif;
+// $pragmatica-black-oblique       : 'PragmaticaBlack-Oblique', sans-serif;
+
+
+$circe-regular : 'Circe-Regular', sans-serif;
+$circe-bold    : 'Circe-Bold', sans-serif;
+$circe-light   : 'Circe-Light', sans-serif;
+
+$futuris       : 'FuturisCyrillic', sans-serif;
+$futuris-bold  : 'Futuris-Bold', sans-serif;
+
+$marta-regular : 'Marta-regular', sans-serif;
+$marta-bold    : 'Marta-Bold', sans-serif;
+$marta-italic  : 'Marta-Italic', sans-serif;
+
+$font-primary           : $circe-regular;
+$font-primary-bold      : $circe-bold;
+$font-primary-light     : $circe-light;
+
+$font-secondary         : $futuris;
+$font-secondary-bold    : $futuris-bold;
+
+$font-additional        : $marta-regular;
+$font-additional-bold   : $marta-bold;
+$font-additional-italic : $marta-italic;
+
+// Цвета
+
+// Базовые цвета проекта.
+$black          : #000;
+$white          : #fff;
+$red            : #cb2027;
+$gray           : #999;
+$gray-dark      : #666;
+$gray-light     : #ccc;
+$aqua : #5a9fb0;
+
+
+// Цвета проекта
+//
+
+$text-color : $black;
+$title-color: $black;
+$placeholder-color: $black;
+
+$proj-red          : #f9523d;
+$proj-gray         : #a5c6cf;
+$aqua-bg-primary   : #e5f6f9;
+$aqua-bg-secondary : #cde9ef;
+$aqua-bg-light     : #e4f5f9;
+$aqua-bg-lighter   : #eefcff;
+
+// цвет ссылок
+$link-color: #2a7183;
+$link-color-underline: transparent;
+
+$link-color-hover: #063945;
+$link-color-hover-underline: #ccc;
+
+$link-color-active: $proj-red;
+$link-color-active-underline: transparent;
+
+// Настройка кнопок
+//
+$btn-font-size        : 18px;
+$btn-height           : 45px;
+$btn-padding          : 0 15px;
+$btn-font-family      : $font-primary;
+$btn-text-color       : $black;
+$btn-text-color-hover : $black;
+$btn-bg-color         : $gray;
+$btn-bg-color-hover   : $white;
+
+// Footer
+$footer-height: 436px;
+$footer-bg-primary: $aqua-bg-primary;
+$footer-bg-secondary: $aqua-bg-secondary;
+
+
+//header
+$header-height : 50px;
+$header-bg     : #fc483e;
+
+// a. Базовые настройки
+// -------------------------------------
+// Размер основного шрифта. Обычно равен 16px
+$base-font-size: 16px;
+
+//  Размер межстрочного интервала. Обычно равен $base-font-size * 1.5
+$base-line-height: 20px;
+
+// Стандартные единицы измерения. Если false - px, true - em
+$rhythm-unit: 'px';
+
+
+// б. Основная сетка
+// -------------------------------------
+$columns: 16;
+$gutter-width: 2.08%;
+$column-width: 4.17%;
+
+$min-width: 960px;
+$max-width: 1536px;
+
+
+// Карта по умолчанию
+$susy: (
+        math: fluid,
+        container: auto,
+        container-position: center,
+        columns: $columns,
+        gutters: $gutter-width/$column-width,
+        column-width: $column-width,
+        gutter-position: inside-static,
+        global-box-sizing: border-box,
+//        debug: (
+//            image: show-baseline,
+//            output: overlay,
+//        ),
+);
+
+// в. Медиа-запросы
+// -------------------------------------
+
+$screen: 'only screen';
+
+$maxWidth: (1536px, 2000px);
+$prezero-screen: (0, 1460px);
+$zero-screen: (0, 1350px);
+$first-screen: (0, 1250px);
+$second-screen: (0, 1150px);
+$third-screen: (0, 1090px);
+$fourth-screen: (0, 1005px);
+
+$header-1020: (0, 1020px);
+$header-down: "#{$screen} and (max-width: #{upper-bound($header-1020)})";
+
+$maxwidth-up: "#{$screen} and (min-width: #{upper-bound($maxWidth)})";
+
+$prezero-down: "#{$screen} and (max-width: #{upper-bound($prezero-screen)})";
+$zero-down: "#{$screen} and (max-width: #{upper-bound($zero-screen)})";
+$first-down: "#{$screen} and (max-width: #{upper-bound($first-screen)})";
+$second-down: "#{$screen} and (max-width: #{upper-bound($second-screen)})";
+$third-down: "#{$screen} and (max-width: #{upper-bound($third-screen)})";
+$fourth-down: "#{$screen} and (max-width: #{upper-bound($fourth-screen)})";
+
+
+$hidpi: min-resolution 1.5dppx;
+
+// д. Типографика
+// -------------------------------------
+// Округление дробных значений в вертикальном ритме. True окргулять. False не округлять.
+$round-to-nearest-half-line: true;
+
+// Размер заголовков
+// Хорошие соотношения можно взять на http://type-scale.com
+// либо попросить у дизайнера
+$h1: 28px;
+$h2: 20px;
+$h3: 20px;
+$h4: 14px;
+$p : 16px;
+
+$text-lineheight: 18px;
+
+// е. Менеджмент z-index
+// -------------------------------------
+//$z-layers: (
+//        'popup-overlay' : 998,
+//        'popup' : 999,
+//        'default' : 1,
+//        'hide' : -1,
+//);
+
+
+
+// Подключение compass
+
+// css3
+@import 'compass/css3/animation';  //Specify the CSS3 animation property and all its sub-properties.
+//@import 'compass/css3/appearance'; //Specify the CSS3 appearance property.
+//@import 'compass/css3/background-clip'; //Specify the background clip for all browsers.
+//@import 'compass/css3/background-origin'; //Specify the background origin for all browsers.
+@import 'compass/css3/background-size'; //Specify the background size for all browsers.
+@import 'compass/css3/border-radius'; //Specify the border radius for all browsers.
+//@import 'compass/css3/box';
+@import 'compass/css3/box-shadow'; //Specify the box shadow for all browsers.
+@import 'compass/css3/box-sizing'; //Specify the box sizing for all browsers.
+@import 'compass/css3/columns'; //Specify a columnar layout for all browsers.
+//@import 'compass/css3/deprecated-support';
+@import 'compass/css3/filter'; //Specify the (image) filter for all browsers.
+//@import 'compass/css3/flexbox'; //This module provides mixins that pertain to CSS3 Flexbox.
+//@import 'compass/css3/hyphenation'; //Mixin for breaking space and injecting hypens into overflowing text
+@import 'compass/css3/images'; //Specify linear gradients and radial gradients for many browsers.
+@import 'compass/css3/inline-block'; //Declare an element inline block for all browsers.
+@import 'compass/css3/opacity'; //Specify the opacity for all browsers.
+//@import 'compass/css3/pie';
+//@import 'compass/css3/regions'; //Specify CSS Regions for supported browsers.
+//@import 'compass/css3/selection';
+//@import 'compass/css3/shared';
+//@import 'compass/css3/text-shadow'; //Specify the text shadow for all browsers.
+@import 'compass/css3/transform'; //Specify transformations for many browsers.
+@import 'compass/css3/transition'; //Specify a style transition for all browsers.
+@import 'compass/css3/user-interface'; //Declare an element inline block for all browsers.
+
+// typography
+//  links
+//@import 'compass/typography/links/hover-link'; //Underline a link when you hover over it.
+//@import 'compass/typography/links/link-colors'; //Easy assignment of colors to link states.
+@import 'compass/typography/links/unstyled-link'; //Make a link appear like regular text.
+//  lists
+//@import 'compass/typography/lists/bullets'; //Mixins for managing list bullets.
+//@import 'compass/typography/lists/horizontal-list'; //Float a list so it appears horizontally.
+//@import 'compass/typography/lists/inline-block-list'; //set list-elements to inline-block so they appear horizontally while retaining their structure.
+//@import 'compass/typography/lists/inline-list'; //Style a list as inline text.
+//  text
+//@import 'compass/typography/text/ellipsis'; //Text truncation with ellipsis.
+//@import 'compass/typography/text/force-wrap'; //Wrap URLs and long lines of text.
+//@import 'compass/typography/text/nowrap'; //Remembering whether or not there's a hyphen in white-space is too hard.
+//@import 'compass/typography/text/replacement'; //Replace text with images.
+// utilities
+//   color
+//@import 'compass/utilities/color/brightness'; //Brightness foreground with background colors.
+//@import 'compass/utilities/color/contrast'; //Contrast foreground with background colors.
+//  general
+@import 'compass/utilities/general/clearfix'; //Mixins for clearfixing.
+//@import 'compass/utilities/general/float'; //Mixins for cross-browser floats.
+//@import 'compass/utilities/general/hacks'; //Mixins for hacking specific browsers.
+//@import 'compass/utilities/general/min'; //Mixins for cross-browser min-height and min-width.
+//@import 'compass/utilities/general/reset'; // Mixins for resetting elements (old import).
+//@import 'compass/utilities/general/tag-cloud'; //Mixin for styling tag clouds.
+//  tables
+//@import 'compass/utilities/tables/alternating-rows-and-columns'; //Add striping to a table.
+//@import 'compass/utilities/tables/borders'; //Add borders to a table.
+//@import 'compass/utilities/tables/scaffolding'; //Basic styling of tables to get you started.
+//  layout
+//@import 'compass/layout/grid-background'; //Grid background
+//@import 'compass/layout/sticky-footer'; //Sticky footer
+//@import 'compass/layout/stretching'; //Stretching
+
+@import 'base/vertical_rhythm';

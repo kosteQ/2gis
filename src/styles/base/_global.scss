@@ -1,0 +1,288 @@
+// Подключение библиотек
+@import "compass/reset";
+@import "susy";
+
+// Миксины необходимые для корректной работы библиотек
+@include establish-baseline;
+
+@include border-box-sizing;
+
+// Основное
+//
+html,
+body {
+    min-height: 100%;
+    height: 100%;
+}
+
+body {
+    background-color : #e9e6d3;
+    font-family      : $font-primary;
+    color            : $text-color;
+    min-width        : 960px;
+    padding          : 10px;
+}
+
+a {
+    @include transition-duration(0.3s);
+    @include transition-property(opacity, color, background-color, border);
+    @include transition-timing-function(ease);
+    display         : inline-block;
+    color           : $link-color;
+    text-decoration : none;
+    border-bottom   : solid 1px $link-color-underline;
+    line-height     : 1;
+
+    &:hover {
+        color: $link-color-hover;
+        border-bottom-color: $link-color-hover-underline;
+    }
+
+    &:focus,
+    &:active {
+        color: $link-color-active;
+        border-bottom-color: $link-color-active-underline;
+    }
+}
+
+label {
+    user-select: none;
+}
+
+img {
+    border: none;
+    max-width: 100%;
+}
+
+input {
+    &::placeholder {
+        color: $placeholder-color;
+    }
+
+    &[type="submit"] {
+        -webkit-appearance: none;
+
+        &:focus {
+            outline: none;
+        }
+    }
+    &[type="checkbox"] {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.b-input {
+    @include border-radius(3px);
+    padding: {
+        left: 10px;
+        right: 10px;
+        top: 0;
+        bottom: 0;
+    };
+    font: normal 18px/45px $font-primary;
+    border: solid 1px $gray-light;
+    height: 45px;
+
+    &:focus,
+    &.is-active {
+        outline: none;
+        border: solid 1px $red;
+    }
+
+    &::-webkit-input-placeholder {
+        font-size: 18px;
+    }
+}
+
+textarea {
+    padding: gutter();
+    font-size: 14px;
+    line-height: 1.2;
+    border: solid 1px $gray-light;
+
+    &:focus {
+        outline: none;
+        border: solid 1px $red;
+    }
+
+    &::-webkit-input-placeholder {
+        font-size: 16px;
+    }
+}
+
+.b-textarea {
+    display: block;
+    width: 100%;
+    height: 172px;
+}
+
+.b-input,
+.b-textarea {
+    &.user-error {
+        border-color: $proj-red;
+    }
+}
+
+textarea {
+    padding: {
+        left: gutter();
+        right: gutter();
+        top: gutter();
+        bottom: gutter();
+    };
+    font-style: normal;
+    resize: none;
+    overflow-y: hidden;
+    //IE fix
+    &::placeholder {
+        color: $placeholder-color;
+    }
+}
+
+// Типографика
+
+h1 {
+    font-family    : $font-secondary;
+    font-weight    : normal;
+    margin-bottom  : 25px;
+    color          : $title-color;
+}
+
+h1 {
+    @include adjust-font-size-to($h1);
+}
+
+h2,
+h3 {
+    font-family: $font-secondary;
+    margin-bottom: 15px;
+}
+
+h2 {
+    @include adjust-font-size-to($h2);
+}
+
+h3 {
+    @include adjust-font-size-to($h3);
+}
+
+h4 {
+    @include adjust-font-size-to($h4);
+}
+
+p {
+    @include margin-trailer;
+    @include adjust-font-size-to($p);
+    line-height: $text-lineheight;
+}
+
+sub,
+sup {
+    font-size: .5em;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    top: -.5em;
+}
+
+sub {
+    bottom: -.25em;
+}
+
+b,
+strong {
+    font-family: $font-primary-bold;
+}
+
+i,
+em {
+    font-family: $font-primary-light;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    position: relative;
+    margin: 0 0 20px;
+    font-size: 16px;
+    line-height: 20px;
+    padding-left: 20px;
+}
+
+blockquote,
+.b-blockqoute {
+    display: block;
+
+    p {
+        margin-bottom: 0;
+    }
+}
+
+.text-align_center {
+    text-align: center !important;
+}
+
+.text-align_left {
+    text-align: left !important;
+}
+
+.text-align_right {
+    text-align: right !important;
+}
+
+.hide {
+    display: none !important;
+}
+
+.show {
+    display: block !important;
+}
+
+.ruble {
+    font-family: $ruble;
+}
+
+.float_right {
+    float: right !important;
+}
+
+.float_left {
+    float: left !important;
+}
+
+.font-weight_bold {
+    font-family: $font-primary-bold;
+}
+
+.color_gray {
+    color: $gray !important;
+}
+
+.with-inside-link {
+    border: none;
+
+    &:hover {
+        .inside-link {
+            border-bottom-color: $link-color-hover-underline;
+        }
+    }
+}
+
+.inside-link {
+    @include transition(ease .3s border-color);
+    border-bottom: solid 1px transparent;
+}
+
+.overflow_hidden {
+    overflow: hidden;
+}
+
+.position_relative {
+    position: relative;
+}

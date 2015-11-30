@@ -1,0 +1,114 @@
+// Triangle mixin
+// @param [string] $side: triangle direction
+// @param [color] $color: triangle color
+// @param [number] $size: triangle size
+@mixin triangle($side: top, $color: $black, $size: 16px) {
+    $border: $size solid $transparent;
+    width: 0;
+    height: 0;
+
+    @if not index(top right bottom left, $side) {
+        @warn 'Неправльное значение. Попробуйте - top, right, bottom или left.';
+    } @else {
+
+        @if $side == 'top' or $side == 'bottom' {
+            border-left: $border;
+            border-right: $border;
+        }
+
+        @if $side == 'left' or $side == 'right' {
+            border-top: $border;
+            border-bottom: $border;
+        }
+
+        border-#{opposite_position($side)}: $size * 1.5 solid $color;
+    }
+}
+
+// Position element
+// @params [string] $position : true, vertical, horizontal
+// @params [string] $type : position type : absolute, relative, fixed
+// @params [number] $width: block width
+// @params [number] $height: block height
+@mixin position-center($position:true, $type: absolute, $width: 0, $height: 0) {
+    position: $type;
+    content: '';
+
+    @if $position == true {
+        top: 50%;
+        margin-top: - ($height / 2);
+        left: 50%;
+        margin-left: - ($width / 2);
+    }
+
+    @if $position == vertical {
+        top: 50%;
+        margin-top: - ($height / 2);
+    }
+
+    @if $position == horizontal {
+        left: 50%;
+        margin-left: - ($width / 2);
+    }
+}
+
+@function get-sprite($key) {
+    @if map-has-key($sprites-map, $key) {
+        @return map-get($sprites-map, $key);
+    }
+
+    @warn "Unknown `#{$key}` in $sprites-map.";
+    @return null;
+}
+
+@mixin get-sprite-width($sprite) {
+    width: nth($sprite, 5);
+}
+
+@mixin get-sprite-height($sprite) {
+    height: nth($sprite, 6);
+}
+
+@function sprite-width($sprite-name) {
+    $sprite: get-sprite($sprite-name);
+    @return nth($sprite, 5);
+}
+
+@function sprite-height($sprite-name) {
+    $sprite: get-sprite($sprite-name);
+    @return nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+    $sprite-offset-x: nth($sprite, 3);
+    $sprite-offset-y: nth($sprite, 4);
+    background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+    $sprite-image: nth($sprite, 9);
+    background-image: url(#{$sprite-image});
+}
+
+@mixin sprite-1x($sprite) {
+    @include sprite-image($sprite);
+    @include sprite-position($sprite);
+    @include get-sprite-width($sprite);
+    @include get-sprite-height($sprite);
+}
+
+@mixin sprite-background-size($sprite) {
+    background-size: nth($sprite, 7) nth($sprite, 8);
+}
+
+@mixin sprite($sprite-name) {
+    $sprite: get-sprite($sprite-name);
+    @include sprite-1x($sprite);
+
+    // @if variable-exists(sprites-2x-map) and map-has-key($sprites-2x-map, $sprite-name) {
+    //     @media only screen and (-webkit-min-device-pixel-ratio: 1.5), screen and (min-device-pixel-ratio: 1.5) {
+    //         @include sprite-image(map-get($sprites-2x-map, $sprite-name));
+    //         @include sprite-background-size($sprite);
+    //     }
+    // }
+}

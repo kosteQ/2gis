@@ -1,0 +1,32 @@
+.b-btn {
+    @include border-radius(3px);
+    @include transition(ease .3s all);
+    display          : inline-block;
+    letter-spacing: .4px;
+    vertical-align   : middle;
+    height           : $btn-height;
+    line-height      : $btn-height;
+    cursor           : pointer;
+    text-align       : center;
+    outline          : none;
+    text-decoration  : none;
+    font-family      : $btn-font-family;
+    font-size        : $btn-font-size;
+    height           : $btn-height;
+    padding          : $btn-padding;
+    color            : $btn-text-color;
+    border           : none;
+    background-color : $btn-bg-color;
+
+    &:hover {
+    	color: $btn-text-color-hover;
+        background-color: $btn-bg-color-hover;
+    }
+
+    &:focus {
+        color: $btn-text-color;
+    }
+}
+
+//THEME
+@import '../theme/btn';

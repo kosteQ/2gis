@@ -1,0 +1,17 @@
+.l-wrapper {
+    height: auto;
+    min-height: 100%;
+    margin-bottom: -1 * $footer-height;
+}
+
+.l-inner {
+    @include pie-clearfix;
+    max-width: $max-width;
+    min-width: $min-width;
+    padding: 0 5px;
+    margin: 0 auto;
+}
+
+.l-main {
+    @include pie-clearfix;
+}

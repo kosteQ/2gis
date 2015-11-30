@@ -1,0 +1,111 @@
+.owl-wrapper-outer {
+    padding-bottom: 10px;
+}
+
+.owl-btn {
+    position: absolute;
+    top: 87px;
+    width: 48px;
+    height: 103px;
+    line-height: 84px;
+    vertical-align: middle;
+    text-align: center;
+    background-color: $white;
+    border: solid 1px #e5e5e5;
+    color: #5a9fb0;
+    font-size: 22px;
+    z-index: 1000;
+
+    &:before {
+        @include translate(-50%, -50%);
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+    }
+
+    &:hover {
+        border-color: #e5e5e5;
+    }
+
+    &:active {
+        @include box-shadow(inset 0 0 4px rgba(0, 0, 0, .23));
+    }
+
+    &.disabled {
+        @include opacity(.7);
+        cursor: default;
+
+        &:active {
+            @include box-shadow(1px 0 4px rgba(0, 0, 0, .16));
+        }
+    }
+}
+
+.owl-btn_prev {
+    @include box-shadow(3px 0 8px 1px rgba(0, 0, 0, .16));
+    left: 0;
+    border-left: none;
+
+    &:before {
+        @include sprite('slider-arr-l');
+    }
+
+    &:hover {
+        &:before {
+            @include sprite('slider-arr-l-h');
+        }
+    }
+
+    &:active {
+        &:before {
+            @include sprite('slider-arr-l-act');
+        }
+    }
+
+    &.disabled {
+        &:before {
+            @include sprite('slider-arr-l-dis');
+        }
+
+        &:active {
+            @include box-shadow(3px 0 8px -1px rgba(0, 0, 0, .16));
+        }
+    }
+}
+
+.owl-btn_next {
+    @include box-shadow(-3px 0 8px -1px rgba(0, 0, 0, .16));
+    right: 0;
+    border-right: none;
+
+    &:before {
+        @include sprite('slider-arr-r');
+    }
+
+    &:hover {
+        &:before {
+            @include sprite('slider-arr-r-h');
+        }
+    }
+
+    &:active {
+        &:before {
+            @include sprite('slider-arr-r-act');
+        }
+    }
+
+    &.disabled {
+        &:before {
+            @include sprite('slider-arr-r-dis');
+        }
+
+        &:active {
+            @include box-shadow(-3px 0 4px rgba(0, 0, 0, .16));
+        }
+    }
+}
+
+.owl-stage-outer {
+    padding-bottom: 10px;
+}

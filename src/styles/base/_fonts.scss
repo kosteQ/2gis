@@ -1,0 +1,251 @@
+@mixin font($family, $src, $weight: normal, $style: normal) {
+    @font-face {
+        font-family: $family;
+        src: url('#{$src}.eot'); // IE9 compat
+        src: url('#{$src}.eot?#iefix') format('embedded-opentype'), // IE8 and below
+            url('#{$src}.woff') format('woff'), // standards
+            url('#{$src}.ttf') format('truetype'), // Safari, Android, iOS
+            url('#{$src}.svg##{$family}') format('svg'); // legacy iOS
+
+        font-style: $style;
+        font-weight: $weight;
+    }
+}
+
+// PTSans
+// @include font(
+//     "PTSans-regular",
+//     '../fonts/PTSans/PTSans-Regular',
+//     normal, //font-weight
+//     normal //font-style
+// );
+
+// @include font(
+//     "PTSans-bold",
+//     '../fonts/PTSans/PTSans-Bold',
+//     normal, //font-weight
+//     normal //font-style
+// );
+
+// @include font(
+//     "PTSans-italic",
+//     '../fonts/PTSans/PTSans-italic',
+//     normal, //font-weight
+//     normal //font-style
+// );
+
+
+// @include font(
+//     "circe-light",
+//     '../fonts/circe/crc35-webfont',
+//     normal, //font-weight
+//     normal //font-style
+// );
+
+// @include font(
+//     "circe-regular",
+//     '../fonts/circe/CRC55__W',
+//     normal, //font-weight
+//     normal //font-style
+// );
+
+// @include font(
+//     "circe-bold",
+//     '../fonts/circe/CRC65__W',
+//     normal, //font-weight
+//     normal //font-style
+// );
+
+// @include font(
+//     "opensans",
+//     '../fonts/opensans_regular_cyrillic/OpenSans-Regular-webfont',
+//     normal, //font-weight
+//     normal //font-style
+// );
+
+// @include font(
+//     'opensans-bold',
+//     '../fonts/opensans_bold_cyrillic/OpenSans-Bold-webfont',
+//     normal, //font-weight
+//     normal //font-style
+// );
+
+// @include font(
+//     'opensans-italic',
+//     '../font/opensans_italic_cyrillic/OpenSans-Italic-webfont',
+//     normal,
+//     normal
+// );
+
+// @include font(
+//     'ruble',
+//     '../fonts/ruble/ruble-webfont',
+//     normal,
+//     normal
+// );
+
+// @include font(
+//     'myriadpro-bold',
+//     '../fonts/myriadpro-bold/myriadpro-bold',
+//     normal,
+//     normal
+// );
+
+// @include font(
+//     'PragmaticaBlack',
+//     '../fonts/pragmaticac/web/PragmaticaBlack/PragmaticaBlack',
+//     normal,
+//     normal
+// );
+
+// @include font(
+//     'PragmaticaBlack-Oblique',
+//     '../fonts/pragmaticac/web/PragmaticaBlack-Oblique/PragmaticaBlack-Oblique',
+//     normal,
+//     normal
+// );
+
+// @include font(
+//     'PragmaticaBold-Obl',
+//     '../fonts/pragmaticac/web/PragmaticaBold-Obl/PragmaticaBold-Obl',
+//     normal,
+//     normal
+// );
+
+// @include font(
+//     'PragmaticaBold-Reg',
+//     '../fonts/pragmaticac/web/PragmaticaBold-Reg/PragmaticaBold-Reg',
+//     normal,
+//     normal
+// );
+
+// @include font(
+//     'PragmaticaBook-Italic',
+//     '../fonts/pragmaticac/web/PragmaticaBook-Italic/PragmaticaBook-Italic',
+//     normal,
+//     normal
+// );
+
+// @include font(
+//     'PragmaticaBook-Reg',
+//     '../fonts/pragmaticac/web/PragmaticaBook-Reg/PragmaticaBook-Reg',
+//     normal,
+//     normal
+// );
+
+// @include font(
+//     'PragmaticaExtraBold',
+//     '../fonts/pragmaticac/web/PragmaticaExtraBold/PragmaticaExtraBold',
+//     normal,
+//     normal
+// );
+
+// @include font(
+//     'PragmaticaExtraBold-Oblique',
+//     '../fonts/pragmaticac/web/PragmaticaExtraBold-Oblique/PragmaticaExtraBold-Oblique',
+//     normal,
+//     normal
+// );
+
+// @include font(
+//     'PragmaticaExtraLight-Oblique',
+//     '../fonts/pragmaticac/web/PragmaticaExtraLight-Oblique/PragmaticaExtraLight-Oblique',
+//     normal,
+//     normal
+// );
+
+// @include font(
+//     'PragmaticaExtraLight-Reg',
+//     '../fonts/pragmaticac/web/PragmaticaExtraLight-Reg/pragmaticaExtraLite',
+//     normal,
+//     normal
+// );
+
+// @include font(
+//     'PragmaticaLight',
+//     '../fonts/pragmaticac/web/PragmaticaLight/PragmaticaLight',
+//     normal,
+//     normal
+// );
+
+// @include font(
+//     'PragmaticaLight-Oblique',
+//     '../fonts/pragmaticac/web/PragmaticaLight-Oblique/PragmaticaLight-Oblique',
+//     normal,
+//     normal
+// );
+
+// @include font(
+//     'PragmaticaMedium',
+//     '../fonts/pragmaticac/web/PragmaticaMedium/PragmaticaMedium',
+//     normal,
+//     normal
+// );
+
+// @include font(
+//     'PragmaticaMedium-Oblique',
+//     '../fonts/pragmaticac/web/PragmaticaMedium-Oblique/PragmaticaMedium-Oblique',
+//     normal,
+//     normal
+// );
+
+
+// Circe
+// @include font(
+//     'Circe-Regular',
+//     '../fonts/circe/Circe-Regular',
+//     normal,
+//     normal
+// );
+
+// @include font(
+//     'Circe-Light',
+//     '../fonts/circe/Circe-Light',
+//     normal,
+//     normal
+// );
+
+// @include font(
+//     'Circe-Bold',
+//     '../fonts/circe/Circe-Bold',
+//     normal,
+//     normal
+// );
+
+// // Futuris
+// @include font(
+//     'FuturisCyrillic',
+//     '../fonts/Futuris/FuturisCyrillic',
+//     normal,
+//     normal
+// );
+
+// @include font(
+//     'Futuris-Bold',
+//     '../fonts/Futuris/Futuris-Bold',
+//     normal,
+//     normal
+// );
+
+
+// // Marta
+// @include font(
+//     'Marta-regular',
+//     '../fonts/Marta/Marta',
+//     normal,
+//     normal
+// );
+
+// @include font(
+//     'Marta-Bold',
+//     '../fonts/Marta/Marta-Bold',
+//     normal,
+//     normal
+// );
+
+// @include font(
+//     'Marta-Italic',
+//     '../fonts/Marta/Marta-Italic',
+//     normal,
+//     normal
+// );

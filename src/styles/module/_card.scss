@@ -1,0 +1,35 @@
+.b-card {
+    @include box-shadow(0 0 10px 1px #999);
+    position: absolute;
+    background-color: $white;
+    width: 400px;
+
+    +.b-card {
+        @for $i from 0 through 1000 {
+            &:nth-child(#{$i}) {
+                margin-left: (60 * $i) - 60 + px;
+            }
+        }
+    }
+
+    &:last-child {
+        &.wide {
+            width: 100%;
+            max-width: 960px;
+        }
+    }
+}
+
+.b-card__number {
+    @include translate(-50%, -50%);
+    @include border-radius(50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    border: solid 1px $black;
+    font-size: 32px;
+    text-align: center;
+}
